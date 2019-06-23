@@ -27,6 +27,23 @@ int main()
 	//create a window
 	sf::RenderWindow mainWindow(sf::VideoMode(800, 600), "VSGitHelloWorld");
 
+	//load a font
+	string fontPath = "cour.ttf";
+	sf::Font courierFont; 
+	if (courierFont.loadFromFile(fontPath) == false)
+	{
+		cout << "Error loading the font in file: " << fontPath << endl;
+	}
+
+	//create a text object and set values
+	int textSize = 24;
+	sf::Text msgText;
+	msgText.setString(msg);
+	msgText.setCharacterSize(textSize);
+	msgText.setFont(courierFont);
+	msgText.setOutlineColor(sf::Color::White);
+	msgText.setFillColor(sf::Color::White);
+
 	while (mainWindow.isOpen())
 	{
 		sf::Event sfE;
@@ -37,6 +54,15 @@ int main()
 				mainWindow.close();
 			}
 		}
+
+		//clear window
+		mainWindow.clear();
+
+		//draw stuff to window
+		mainWindow.draw(msgText);
+
+		//update window
+		mainWindow.display();
 	}
 	
 	//pause();
