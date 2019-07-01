@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string>
+#include <thread>
 #include <SFML/Main.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "Model.h"
+#include "Viewer.h"
+#include "Controller.h"
+#include "SFMLViewer.h"
+#include "MessageModel.h"
 
 
 using std::cout;
@@ -25,16 +31,18 @@ int main()
 	cout << msg << endl;
 	
 	//create a window
-	sf::RenderWindow mainWindow(sf::VideoMode(800, 600), "VSGitHelloWorld");
+//	sf::RenderWindow mainWindow(sf::VideoMode(800, 600), "VSGitHelloWorld");
 
 	//load a font
 	string fontPath = "cour.ttf";
-	sf::Font courierFont; 
+//	sf::Font courierFont; 
+	/*	
 	if (courierFont.loadFromFile(fontPath) == false)
 	{
 		cout << "Error loading the font in file: " << fontPath << endl;
 	}
-
+	*/
+/*
 	//create a text object and set values
 	int textSize = 24;
 	sf::Text msgText;
@@ -43,7 +51,8 @@ int main()
 	msgText.setFont(courierFont);
 	msgText.setOutlineColor(sf::Color::White);
 	msgText.setFillColor(sf::Color::White);
-
+*/
+/*
 	while (mainWindow.isOpen())
 	{
 		sf::Event sfE;
@@ -64,8 +73,20 @@ int main()
 		//update window
 		mainWindow.display();
 	}
-	
-	//pause();
+	*/
+
+	int scrResX = 800, scrResY = 600;
+	SFMLViewer sfview(scrResX, scrResY, "VSGitHelloWorld", fontPath);
+	MessageModel(sfview, msg, scrResX, scrResY, 0, 0);
+	//create a controller
+
+	/*
+	std::thread viewerThread([&sfview] {
+		sfview.loop(); });
+
+	viewerThread.join();
+	*/
+	pause();
 
 	return 0;
 }
