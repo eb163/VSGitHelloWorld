@@ -18,6 +18,8 @@ class Viewer : public ViewerInterface
 private:
 	Model *mptr = nullptr;
 	Controller *cptr = nullptr;
+
+protected:
 	queue<Input*> inputQueue;
 	queue<Event*> eventQueue;
 
