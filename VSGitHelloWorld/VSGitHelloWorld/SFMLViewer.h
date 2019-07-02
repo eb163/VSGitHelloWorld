@@ -1,5 +1,11 @@
 #pragma once
 #include "Viewer.h"
+#include "Input.h"
+#include "CloseInput.h"
+#include "LeftMouseClickInput.h"
+#include "Event.h"
+#include "CloseEvent.h"
+#include "RandomizeEvent.h"
 #include <string>
 #include <SFML/Main.hpp>
 #include <SFML/System.hpp>

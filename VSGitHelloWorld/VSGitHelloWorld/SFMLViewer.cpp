@@ -85,6 +85,26 @@ void SFMLViewer::loop()
 		}
 
 		//process event and package as an input to be sent to controller
+		if (sfE.type == sf::Event::KeyReleased)
+		{
+			//create an input to pass to MVC system
+			if (sfE.key.code == sf::Keyboard::Escape)
+			{
+				cout << "INPUT: Escape key pressed!" << endl;
+				CloseInput ci;
+				inputQueue.push(&ci);
+			}
+		}
+
+		if (sfE.type == sf::Event::MouseButtonReleased)
+		{
+			if (sfE.mouseButton.button == sf::Mouse::Left)
+			{
+				cout << "INPUT: Left mouse button clicked!" << endl;
+				LeftMouseClickInput lmc;
+				inputQueue.push(&lmc);
+			}
+		}
 
 
 		updateDisplay();

@@ -117,22 +117,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CloseEvent.cpp" />
+    <ClCompile Include="CloseInput.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="HelloWorldController.cpp" />
+    <ClCompile Include="LeftMouseClickInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageModel.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="RandomizeEvent.cpp" />
     <ClCompile Include="SFMLViewer.cpp" />
     <ClCompile Include="Viewer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CloseEvent.h" />
+    <ClInclude Include="CloseInput.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="ControllerInterface.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="Event.h" />
+    <ClInclude Include="HelloWorldController.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="LeftMouseClickInput.h" />
     <ClInclude Include="MessageModel.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelInterface.h" />
+    <ClInclude Include="RandomizeEvent.h" />
     <ClInclude Include="SFMLViewer.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="ViewerInterface.h" />

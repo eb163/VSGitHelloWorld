@@ -10,6 +10,7 @@
 #include "Controller.h"
 #include "SFMLViewer.h"
 #include "MessageModel.h"
+#include "HelloWorldController.h"
 
 
 using std::cout;
@@ -86,6 +87,8 @@ int main()
 
 	viewerThread.join();
 	*/
+	sfview.loop();
+
 	pause();
 
 	return 0;
