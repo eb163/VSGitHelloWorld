@@ -1,0 +1,4 @@
+-Implement Input processing and Event processing in HelloWorldController
+-test the Input->Controller->Event process
+-get View taking data from Model to display on screen when update() is called
+-add a "randomize" function to MessageModel to be called when the Randomize event is received
