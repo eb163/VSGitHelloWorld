@@ -75,13 +75,16 @@ void SFMLViewer::updateDisplay()
 
 void SFMLViewer::loop()
 {
-	while (window->isOpen())
+	cout << "SFMLViewer.loop()" << endl;
+	while (window->isOpen() && this->pollInput() == false)
 	{
 		sf::Event sfE;
 		window->pollEvent(sfE);
 		if(sfE.type == sf::Event::Closed)
 		{
 			window->close();
+			CloseInput* ci = new CloseInput;
+			inputQueue.push(ci);
 		}
 
 		//process event and package as an input to be sent to controller
@@ -91,8 +94,8 @@ void SFMLViewer::loop()
 			if (sfE.key.code == sf::Keyboard::Escape)
 			{
 				cout << "INPUT: Escape key pressed!" << endl;
-				CloseInput ci;
-				inputQueue.push(&ci);
+				CloseInput* ci = new CloseInput;
+				inputQueue.push(ci);
 			}
 		}
 
@@ -101,8 +104,8 @@ void SFMLViewer::loop()
 			if (sfE.mouseButton.button == sf::Mouse::Left)
 			{
 				cout << "INPUT: Left mouse button clicked!" << endl;
-				LeftMouseClickInput lmc;
-				inputQueue.push(&lmc);
+				LeftMouseClickInput* lmc = new LeftMouseClickInput;
+				inputQueue.push(lmc);
 			}
 		}
 

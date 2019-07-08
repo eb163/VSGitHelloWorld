@@ -4,6 +4,7 @@
 
 RandomizeEvent::RandomizeEvent()
 {
+	setType(EventType::EVENT_RANDOMIZE);
 }
 
 

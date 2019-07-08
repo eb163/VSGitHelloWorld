@@ -15,15 +15,20 @@ private:
 	Model* mptr = nullptr;
 	Viewer* vptr = nullptr;
 
+protected:
 	queue<Input*> inputQueue;
 	queue<Event*> eventQueue;
-
-	bool isRunning = false; //for running the main loop
+	bool running = true; //for running the main loop
 
 public:
 	Controller();
 	Controller(Model& m, Viewer& v);
 	~Controller();
+
+	void connectModel(Model& m);
+	void connectViewer(Viewer& v);
+
+	bool isRunning();
 
 	//controller must:
 	//parse input from user

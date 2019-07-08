@@ -120,7 +120,10 @@
     <ClCompile Include="CloseEvent.cpp" />
     <ClCompile Include="CloseInput.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="HelloWorldController.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="LeftMouseClickInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageModel.cpp" />
@@ -138,6 +141,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="HelloWorldController.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="LeftMouseClickInput.h" />
     <ClInclude Include="MessageModel.h" />
     <ClInclude Include="Model.h" />

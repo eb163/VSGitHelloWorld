@@ -38,6 +38,21 @@ Controller::~Controller()
 	}
 }
 
+void Controller::connectModel(Model & m)
+{
+	mptr = &m;
+}
+
+void Controller::connectViewer(Viewer & v)
+{
+	vptr = &v;
+}
+
+bool Controller::isRunning()
+{
+	return running;
+}
+
 void Controller::parseInput()
 {
 	cout << "Controller.parseInput()" << endl;
@@ -97,10 +112,8 @@ void Controller::takeInput()
 
 void Controller::loop()
 {
+	running = true;
 	cout << "Controller.loop()" << endl;
-//	isRunning = true;
-//	while (isRunning)
-//	{
 		cout << "----------------\nNew Controller.loop() iteration" << endl;
 		//1. poll Viewer for Inputs and add any Inputs to queue
 		this->takeInput();
@@ -116,7 +129,6 @@ void Controller::loop()
 
 		//5. ping Viewer to update
 		vptr->update();
-//	}
 
 
 }

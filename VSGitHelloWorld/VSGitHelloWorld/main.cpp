@@ -78,17 +78,17 @@ int main()
 
 	int scrResX = 800, scrResY = 600;
 	SFMLViewer sfview(scrResX, scrResY, "VSGitHelloWorld", fontPath);
-	MessageModel(sfview, msg, scrResX, scrResY, 0, 0);
+	MessageModel msgmodel(sfview, msg, scrResX, scrResY, 0, 0);
 	//create a controller
 
-	/*
-	std::thread viewerThread([&sfview] {
-		sfview.loop(); });
+	HelloWorldController ctrl(msgmodel, sfview);
+	//ctrl.parseInput();
 
-	viewerThread.join();
-	*/
-	sfview.loop();
-
+	while (ctrl.isRunning())
+	{
+		sfview.loop();
+		ctrl.loop();
+	}
 	pause();
 
 	return 0;

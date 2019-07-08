@@ -4,6 +4,7 @@
 
 CloseEvent::CloseEvent()
 {
+	setType(EventType::EVENT_CLOSED);
 }
 
 

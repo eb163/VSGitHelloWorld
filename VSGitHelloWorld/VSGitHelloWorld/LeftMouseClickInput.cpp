@@ -4,7 +4,7 @@
 
 LeftMouseClickInput::LeftMouseClickInput()
 {
-
+	this->setType(InputType::INPUT_LEFTMOUSECLICK);
 }
 
 

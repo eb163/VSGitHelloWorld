@@ -1,4 +1,12 @@
--Implement Input processing and Event processing in HelloWorldController
+-merge docs from "MVCHelloWorld" with VSGitHelloWorld
+
+-fix bug:
+	-deconstructor bugs where a model, viewer, or controller tries to delete objects that were already destroyed
+
+-Implement Input processing and Event processing in HelloWorldController 
+	//in progress, need testing
+-implement constructors in HellowWorldController and add methods for connecting Model, Viewer, and Controller to the respective M V and C classes
+	//need to do this to test Input processing
 -test the Input->Controller->Event process
 -get View taking data from Model to display on screen when update() is called
 -add a "randomize" function to MessageModel to be called when the Randomize event is received

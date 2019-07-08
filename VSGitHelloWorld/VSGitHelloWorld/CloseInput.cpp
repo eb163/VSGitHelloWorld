@@ -4,7 +4,7 @@
 
 CloseInput::CloseInput()
 {
-
+	this->setType(InputType::INPUT_CLOSE);
 }
 
 

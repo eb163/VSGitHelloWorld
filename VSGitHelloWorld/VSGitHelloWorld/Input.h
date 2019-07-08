@@ -1,7 +1,16 @@
 #pragma once
 
+enum InputType {INPUT_CLOSE, INPUT_LEFTMOUSECLICK};
+
 class Input
 {
-	//todo
-	//stuff goes here
+private:
+	InputType type;
+
+protected:
+	void setType(InputType t);
+
+public:
+	InputType getType();
+
 };
